@@ -1,0 +1,73 @@
+table{
+    table-layout:fixed;
+    width: 100%;
+}
+
+table :nth-child(n){
+    overflow-wrap: break-word;
+}
+
+
+tr.ok td.dateline{
+    background-color: rgb(35, 44, 70);
+}
+
+tr.urgently td.dateline{
+    background-color: rgb(104, 116, 154);
+}
+
+tr.missed td{
+    background-color: brown;
+}
+
+tr td{
+    background-color: lightgray;
+}
+
+div#resize_table_input{
+    float: left;
+}
+
+button[id="render_date_start_dec"], button[id="render_date_start_inc"], button[id="add_task_button"]{
+    font-size: 110%;
+    border: 1px gray solid;
+    margin: 2px;
+}
+
+button[id="render_date_start_dec"]:active, button[id="render_date_start_inc"]:active, button[id="add_task_button"]:active{
+    font-size: 120%;
+    border: 1px gray solid;
+    margin: 2px;
+}
+
+form#add_task_bar{
+    background-color: lightgray;
+    border: gray thin solid;
+    width: max-content;
+    height: 100%;
+    padding: 5px;
+    display: inline-block;
+    /* position: absolute; */
+}
+
+td.task_cell:hover, td.task_cell:active{
+    cursor: pointer;
+    background-color: gray;
+}
+
+input::-webkit-datetime-edit-day-field:focus,
+input::-webkit-datetime-edit-month-field:focus,
+input::-webkit-datetime-edit-year-field:focus {
+    background-color: rgb(170, 170, 170);
+    color: rgb(12, 12, 12);
+    outline: none;
+}
+
+@media (max-width: 650px) {
+    div#landing_tag{
+        overflow: scroll;
+    }
+    table{
+        table-layout:auto;
+    }
+}

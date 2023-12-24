@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="../static/css/style.css">
+        <title>toDo</title>
+    </head>
+    <body>
+        <form action="{{ url_for('index') }}" method="POST" id="add_task_bar">
+            <label>subject:<br> <input type="text" name="subject"></label><br>
+            <label>task name:<br> <input type="text" name="task_name"></label><br>
+            <label>dateline:<br> <input type="date" name="dateline"></label><br>
+            <label>description:<br> <textarea name="description" cols="100" rows="10"></textarea></label><br>
+
+            <input type="submit" name="add" value="add" style="margin-top: 5px; float: left">
+            <input type="submit" name="delete" value="delete" style="margin-top: 5px; float: right">
+        </form>
+        <div id="landing_tag">
+
+        </div>
+
+
+        <script>
+            let data = {{data|tojson}}
+
+        </script>
+
+        <script type="module" src="../static/js/render_table.js"></script>
+    </body>
+</html>
