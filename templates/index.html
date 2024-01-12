@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" type="text/css" href="/static/css/main.css" />
+        {% macro table_render(arr_table_name, arr_df) %}
+            {% for i in range(len(arr_df)) %}
+                {% if len(arr_df[i]) != 0 %}
+                    <p>
+                        {{arr_table_name[i]}}
+                    </p>
+                    <table>
+                        <thead>
+                            <tr>
+                                {% for name in arr_df[i].dtypes.index %}
+                                    <th>
+                                        {{name}}
+                                    </th>
+                                {% endfor %}
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for j in range(len(arr_df[i])) %}
+                                <tr>
+                                    {% for name in arr_df[i].dtypes.index %}
+                                    <td>
+                                        {{arr_df[i].loc[j, name]}}
+                                    </td>
+                                    {% endfor %}
+                                </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                {% endif %}
+            {% endfor %}
+        {% endmacro %}
+    </head>
+    <body>
+        {{table_render(arr_table_name, arr_df)}}
+    </body>
+</html>

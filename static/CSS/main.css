@@ -1,0 +1,17 @@
+table{
+    border: black solid thin;
+    min-width: min-content;
+    width: 30%;
+<<<<<<< HEAD
+    margin: 10px;
+=======
+>>>>>>> 31a7ae59769d0068b3f27a5a8255defc233c5491
+}
+
+tr :first-child{
+    border-left: none;
+}
+
+td, th{
+    border-left: black solid thin;
+}
